@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB0F641F1FEA77F50073C44F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F641E1FEA77F50073C44F /* AppDelegate.swift */; };
+		FB0F64211FEA77F50073C44F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F64201FEA77F50073C44F /* ViewController.swift */; };
+		FB0F64241FEA77F50073C44F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB0F64221FEA77F50073C44F /* Main.storyboard */; };
+		FB0F64261FEA77F50073C44F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB0F64251FEA77F50073C44F /* Assets.xcassets */; };
+		FB0F64291FEA77F50073C44F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB0F64271FEA77F50073C44F /* LaunchScreen.storyboard */; };
+		FB0F64341FEA77F50073C44F /* WZSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F64331FEA77F50073C44F /* WZSchedulerTests.swift */; };
+		FB0F643F1FEA77F50073C44F /* WZSchedulerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F643E1FEA77F50073C44F /* WZSchedulerUITests.swift */; };
+		FB0F644E1FEAAEB30073C44F /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F644D1FEAAEB30073C44F /* Mission.swift */; };
+		FB0F64501FEAB1100073C44F /* SchedulerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F644F1FEAB1100073C44F /* SchedulerController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB0F64301FEA77F50073C44F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB0F64131FEA77F50073C44F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB0F641A1FEA77F50073C44F;
+			remoteInfo = WZScheduler;
+		};
+		FB0F643B1FEA77F50073C44F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB0F64131FEA77F50073C44F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB0F641A1FEA77F50073C44F;
+			remoteInfo = WZScheduler;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FB0F641B1FEA77F50073C44F /* WZScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WZScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0F641E1FEA77F50073C44F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB0F64201FEA77F50073C44F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB0F64231FEA77F50073C44F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB0F64251FEA77F50073C44F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB0F64281FEA77F50073C44F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB0F642A1FEA77F50073C44F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB0F642F1FEA77F50073C44F /* WZSchedulerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WZSchedulerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0F64331FEA77F50073C44F /* WZSchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZSchedulerTests.swift; sourceTree = "<group>"; };
+		FB0F64351FEA77F50073C44F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB0F643A1FEA77F50073C44F /* WZSchedulerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WZSchedulerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0F643E1FEA77F50073C44F /* WZSchedulerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZSchedulerUITests.swift; sourceTree = "<group>"; };
+		FB0F64401FEA77F50073C44F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB0F644D1FEAAEB30073C44F /* Mission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		FB0F644F1FEAB1100073C44F /* SchedulerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulerController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB0F64181FEA77F50073C44F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB0F642C1FEA77F50073C44F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB0F64371FEA77F50073C44F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB0F64121FEA77F50073C44F = {
+			isa = PBXGroup;
+			children = (
+				FB0F641D1FEA77F50073C44F /* WZScheduler */,
+				FB0F64321FEA77F50073C44F /* WZSchedulerTests */,
+				FB0F643D1FEA77F50073C44F /* WZSchedulerUITests */,
+				FB0F641C1FEA77F50073C44F /* Products */,
+				FB0F644C1FEAA3A50073C44F /* SupportingFiles */,
+			);
+			sourceTree = "<group>";
+		};
+		FB0F641C1FEA77F50073C44F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB0F641B1FEA77F50073C44F /* WZScheduler.app */,
+				FB0F642F1FEA77F50073C44F /* WZSchedulerTests.xctest */,
+				FB0F643A1FEA77F50073C44F /* WZSchedulerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB0F641D1FEA77F50073C44F /* WZScheduler */ = {
+			isa = PBXGroup;
+			children = (
+				FB0F64201FEA77F50073C44F /* ViewController.swift */,
+				FB0F64221FEA77F50073C44F /* Main.storyboard */,
+				FB0F64271FEA77F50073C44F /* LaunchScreen.storyboard */,
+				FB0F642A1FEA77F50073C44F /* Info.plist */,
+				FB0F644D1FEAAEB30073C44F /* Mission.swift */,
+				FB0F644F1FEAB1100073C44F /* SchedulerController.swift */,
+			);
+			path = WZScheduler;
+			sourceTree = "<group>";
+		};
+		FB0F64321FEA77F50073C44F /* WZSchedulerTests */ = {
+			isa = PBXGroup;
+			children = (
+				FB0F64331FEA77F50073C44F /* WZSchedulerTests.swift */,
+				FB0F64351FEA77F50073C44F /* Info.plist */,
+			);
+			path = WZSchedulerTests;
+			sourceTree = "<group>";
+		};
+		FB0F643D1FEA77F50073C44F /* WZSchedulerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FB0F643E1FEA77F50073C44F /* WZSchedulerUITests.swift */,
+				FB0F64401FEA77F50073C44F /* Info.plist */,
+			);
+			path = WZSchedulerUITests;
+			sourceTree = "<group>";
+		};
+		FB0F644C1FEAA3A50073C44F /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FB0F641E1FEA77F50073C44F /* AppDelegate.swift */,
+				FB0F64251FEA77F50073C44F /* Assets.xcassets */,
+			);
+			name = SupportingFiles;
+			path = WZScheduler;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB0F641A1FEA77F50073C44F /* WZScheduler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB0F64431FEA77F50073C44F /* Build configuration list for PBXNativeTarget "WZScheduler" */;
+			buildPhases = (
+				FB0F64171FEA77F50073C44F /* Sources */,
+				FB0F64181FEA77F50073C44F /* Frameworks */,
+				FB0F64191FEA77F50073C44F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WZScheduler;
+			productName = WZScheduler;
+			productReference = FB0F641B1FEA77F50073C44F /* WZScheduler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FB0F642E1FEA77F50073C44F /* WZSchedulerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB0F64461FEA77F50073C44F /* Build configuration list for PBXNativeTarget "WZSchedulerTests" */;
+			buildPhases = (
+				FB0F642B1FEA77F50073C44F /* Sources */,
+				FB0F642C1FEA77F50073C44F /* Frameworks */,
+				FB0F642D1FEA77F50073C44F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB0F64311FEA77F50073C44F /* PBXTargetDependency */,
+			);
+			name = WZSchedulerTests;
+			productName = WZSchedulerTests;
+			productReference = FB0F642F1FEA77F50073C44F /* WZSchedulerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FB0F64391FEA77F50073C44F /* WZSchedulerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB0F64491FEA77F50073C44F /* Build configuration list for PBXNativeTarget "WZSchedulerUITests" */;
+			buildPhases = (
+				FB0F64361FEA77F50073C44F /* Sources */,
+				FB0F64371FEA77F50073C44F /* Frameworks */,
+				FB0F64381FEA77F50073C44F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB0F643C1FEA77F50073C44F /* PBXTargetDependency */,
+			);
+			name = WZSchedulerUITests;
+			productName = WZSchedulerUITests;
+			productReference = FB0F643A1FEA77F50073C44F /* WZSchedulerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB0F64131FEA77F50073C44F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "王沛晟";
+				TargetAttributes = {
+					FB0F641A1FEA77F50073C44F = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8FUMNGVDQQ;
+						ProvisioningStyle = Automatic;
+					};
+					FB0F642E1FEA77F50073C44F = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FB0F641A1FEA77F50073C44F;
+					};
+					FB0F64391FEA77F50073C44F = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FB0F641A1FEA77F50073C44F;
+					};
+				};
+			};
+			buildConfigurationList = FB0F64161FEA77F50073C44F /* Build configuration list for PBXProject "WZScheduler" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB0F64121FEA77F50073C44F;
+			productRefGroup = FB0F641C1FEA77F50073C44F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB0F641A1FEA77F50073C44F /* WZScheduler */,
+				FB0F642E1FEA77F50073C44F /* WZSchedulerTests */,
+				FB0F64391FEA77F50073C44F /* WZSchedulerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB0F64191FEA77F50073C44F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB0F64291FEA77F50073C44F /* LaunchScreen.storyboard in Resources */,
+				FB0F64261FEA77F50073C44F /* Assets.xcassets in Resources */,
+				FB0F64241FEA77F50073C44F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB0F642D1FEA77F50073C44F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB0F64381FEA77F50073C44F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB0F64171FEA77F50073C44F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB0F644E1FEAAEB30073C44F /* Mission.swift in Sources */,
+				FB0F64211FEA77F50073C44F /* ViewController.swift in Sources */,
+				FB0F641F1FEA77F50073C44F /* AppDelegate.swift in Sources */,
+				FB0F64501FEAB1100073C44F /* SchedulerController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB0F642B1FEA77F50073C44F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB0F64341FEA77F50073C44F /* WZSchedulerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB0F64361FEA77F50073C44F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB0F643F1FEA77F50073C44F /* WZSchedulerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB0F64311FEA77F50073C44F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB0F641A1FEA77F50073C44F /* WZScheduler */;
+			targetProxy = FB0F64301FEA77F50073C44F /* PBXContainerItemProxy */;
+		};
+		FB0F643C1FEA77F50073C44F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB0F641A1FEA77F50073C44F /* WZScheduler */;
+			targetProxy = FB0F643B1FEA77F50073C44F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB0F64221FEA77F50073C44F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB0F64231FEA77F50073C44F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB0F64271FEA77F50073C44F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB0F64281FEA77F50073C44F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB0F64411FEA77F50073C44F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB0F64421FEA77F50073C44F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB0F64441FEA77F50073C44F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8FUMNGVDQQ;
+				INFOPLIST_FILE = WZScheduler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wps.WZScheduler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FB0F64451FEA77F50073C44F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8FUMNGVDQQ;
+				INFOPLIST_FILE = WZScheduler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wps.WZScheduler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FB0F64471FEA77F50073C44F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WZSchedulerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wps.WZSchedulerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WZScheduler.app/WZScheduler";
+			};
+			name = Debug;
+		};
+		FB0F64481FEA77F50073C44F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WZSchedulerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wps.WZSchedulerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WZScheduler.app/WZScheduler";
+			};
+			name = Release;
+		};
+		FB0F644A1FEA77F50073C44F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = WZSchedulerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wps.WZSchedulerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WZScheduler;
+			};
+			name = Debug;
+		};
+		FB0F644B1FEA77F50073C44F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = WZSchedulerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wps.WZSchedulerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WZScheduler;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB0F64161FEA77F50073C44F /* Build configuration list for PBXProject "WZScheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB0F64411FEA77F50073C44F /* Debug */,
+				FB0F64421FEA77F50073C44F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB0F64431FEA77F50073C44F /* Build configuration list for PBXNativeTarget "WZScheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB0F64441FEA77F50073C44F /* Debug */,
+				FB0F64451FEA77F50073C44F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB0F64461FEA77F50073C44F /* Build configuration list for PBXNativeTarget "WZSchedulerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB0F64471FEA77F50073C44F /* Debug */,
+				FB0F64481FEA77F50073C44F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB0F64491FEA77F50073C44F /* Build configuration list for PBXNativeTarget "WZSchedulerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB0F644A1FEA77F50073C44F /* Debug */,
+				FB0F644B1FEA77F50073C44F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB0F64131FEA77F50073C44F /* Project object */;
+}
