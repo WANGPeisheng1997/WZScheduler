@@ -22,7 +22,11 @@ class SchedulerController: UIViewController, UIScrollViewDelegate {
     var previousView = SchedulerScrollView()
     var nextView = SchedulerScrollView()
     
+    var todayMissionList = [Mission]()
+    
     var horizontalPagedView = UIScrollView()
+    
+    var temp=0
     
     func nextDate()->Date{
         return Calendar.current.date(byAdding: Calendar.Component.day, value: 1, to: currentDate)!
@@ -34,6 +38,21 @@ class SchedulerController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        let strHtml = try! NSString(contentsOf: NSURL(string: "http://115.159.59.44:5000/testdata")! as URL, encoding: String.Encoding.utf8.rawValue)
+        print(strHtml)
+        let data = strHtml.data(using: String.Encoding.utf8.rawValue)
+        
+        let jsonArr = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String: Any]]
+        
+        for json in jsonArr {
+            temp = temp+1
+            if(temp==1 || temp==4 || temp==9){
+            let newMission = Mission()
+            newMission.load(dict: json)
+            todayMissionList.append(newMission)
+            }
+        }
         
         dateFormatter.dateFormat = "yyyy/MM/dd"
     
@@ -61,7 +80,7 @@ class SchedulerController: UIViewController, UIScrollViewDelegate {
         horizontalPagedView.delegate = self
         self.view.addSubview(horizontalPagedView)
         
-        
+        mainView.loadMission(missionList: todayMissionList)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

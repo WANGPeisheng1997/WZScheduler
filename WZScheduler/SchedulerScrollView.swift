@@ -10,11 +10,11 @@ import UIKit
 
 class SchedulerScrollView:UIScrollView{
     
-    var newMission = Mission()
+    //var newMission = MissionView()
     var timeAxisLabel = [UILabel]()
-    var missionList = [Mission]()
+    var missionViewArray = [MissionView]()
     let distance = 40
-    let baseTime = 6
+    let baseTime = 0 * 3600
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,17 +24,14 @@ class SchedulerScrollView:UIScrollView{
         
         initializeTimeAxisLabel(baseTime: baseTime)
         
-        //        missionList.append(addNewMission(missionType: 0, missionName: "睡觉", startTime: 6, endTime: 9))
-        //        missionList.append(addNewMission(missionType: 0, missionName: "上课", startTime: 10, endTime: 12))
-        //        missionList.append(addNewMission(missionType: 0, missionName: "学习", startTime: 15, endTime: 18))
-        //        missionList.append(addNewMission(missionType: 0, missionName: "玩耍", startTime: 19, endTime: 22))
     }
     
+    /*
     func createMissionList(missionName:String){
         missionList = []
         missionList.append(addNewMission(missionType: 0, missionName: missionName, startTime: 6, endTime: 9))
     }
-    
+    */
     func calculateTimeAxisLabelPosition(Tag:Int)->CGRect{
         return CGRect(x:0, y:distance*Tag, width:60, height:distance)
     }
@@ -55,6 +52,7 @@ class SchedulerScrollView:UIScrollView{
      }
      */
     
+    /*
     func refresh(direction:Int){
         for i in missionList {
             UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {i.alpha = 0.0}, completion: {
@@ -71,26 +69,27 @@ class SchedulerScrollView:UIScrollView{
             missionList.append(addNewMission(missionType: 0, missionName: "哼", startTime: 9, endTime: 22))
         }
     }
+ */
     
-    func loadMission(){
-        
+    func loadMission(missionList: [Mission]){
+        for mission in missionList {
+            let newMissionView = MissionView(mission: mission)
+            newMissionView.setFrame(frame: CGRect(x: 70, y: distance*(mission.start_time-baseTime)/3600+20, width: 230, height: distance*(mission.end_time-mission.start_time)/3600))
+            missionViewArray.append(newMissionView)
+            self.addSubview(newMissionView)
+            let longPressRecognizer = UILongPressGestureRecognizer(target: self, action:#selector(longPress(_:)))
+            
+            longPressRecognizer.minimumPressDuration = 1.0
+            newMissionView.isUserInteractionEnabled = true
+            newMissionView.addGestureRecognizer(longPressRecognizer)
+        }
     }
     
-    func addNewMission(missionType: Int, missionName: String, startTime: Int, endTime: Int)->Mission{
-        newMission = Mission(missionType: missionType, missionName:missionName, startTime:startTime, endTime:endTime)
-        newMission.setFrame(frame: CGRect(x: 70, y: 40*(startTime-baseTime)+20, width: 230, height: 40*(endTime-startTime)))
-        newMission.backgroundColor = UIColor.blue
-        //newMission.alpha = 0.0
-        self.addSubview(newMission)
-        
-        //UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveEaseIn, animations: {self.newMission.alpha = 1.0}, completion: {(finished:Bool) -> Void in})
-        
-        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action:#selector(longPress(_:)))
-        
-        longPressRecognizer.minimumPressDuration = 1.0
-        newMission.isUserInteractionEnabled = true
-        newMission.addGestureRecognizer(longPressRecognizer)
-        return newMission
+    func clearMission(){
+        for oldMissionView in missionViewArray {
+            oldMissionView.removeFromSuperview()
+        }
+        missionViewArray = []
     }
     
     // 手势响应方法
