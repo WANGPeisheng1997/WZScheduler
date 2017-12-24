@@ -16,6 +16,10 @@
 		FB0F643F1FEA77F50073C44F /* WZSchedulerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F643E1FEA77F50073C44F /* WZSchedulerUITests.swift */; };
 		FB0F644E1FEAAEB30073C44F /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F644D1FEAAEB30073C44F /* Mission.swift */; };
 		FB0F64501FEAB1100073C44F /* SchedulerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F644F1FEAB1100073C44F /* SchedulerController.swift */; };
+		FB2AB5D31FECDB5F0054F473 /* SchedulerScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AB5D21FECDB5F0054F473 /* SchedulerScrollView.swift */; };
+		FB2AB5D51FEF7F6A0054F473 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AB5D41FEF7F6A0054F473 /* LoginViewController.swift */; };
+		FB2AB5D71FEF80760054F473 /* ColorTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AB5D61FEF80760054F473 /* ColorTable.swift */; };
+		FBBA96931FEFA47900F155C3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBA96921FEFA47900F155C3 /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		FB0F64401FEA77F50073C44F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB0F644D1FEAAEB30073C44F /* Mission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		FB0F644F1FEAB1100073C44F /* SchedulerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulerController.swift; sourceTree = "<group>"; };
+		FB2AB5D21FECDB5F0054F473 /* SchedulerScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulerScrollView.swift; sourceTree = "<group>"; };
+		FB2AB5D41FEF7F6A0054F473 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FB2AB5D61FEF80760054F473 /* ColorTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTable.swift; sourceTree = "<group>"; };
+		FBBA96921FEFA47900F155C3 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,10 @@
 				FB0F642A1FEA77F50073C44F /* Info.plist */,
 				FB0F644D1FEAAEB30073C44F /* Mission.swift */,
 				FB0F644F1FEAB1100073C44F /* SchedulerController.swift */,
+				FB2AB5D21FECDB5F0054F473 /* SchedulerScrollView.swift */,
+				FB2AB5D41FEF7F6A0054F473 /* LoginViewController.swift */,
+				FB2AB5D61FEF80760054F473 /* ColorTable.swift */,
+				FBBA96921FEFA47900F155C3 /* Profile.swift */,
 			);
 			path = WZScheduler;
 			sourceTree = "<group>";
@@ -275,10 +287,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB2AB5D51FEF7F6A0054F473 /* LoginViewController.swift in Sources */,
+				FBBA96931FEFA47900F155C3 /* Profile.swift in Sources */,
 				FB0F644E1FEAAEB30073C44F /* Mission.swift in Sources */,
+				FB2AB5D71FEF80760054F473 /* ColorTable.swift in Sources */,
 				FB0F64211FEA77F50073C44F /* ViewController.swift in Sources */,
 				FB0F641F1FEA77F50073C44F /* AppDelegate.swift in Sources */,
 				FB0F64501FEAB1100073C44F /* SchedulerController.swift in Sources */,
+				FB2AB5D31FECDB5F0054F473 /* SchedulerScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +541,7 @@
 				FB0F64451FEA77F50073C44F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB0F64461FEA77F50073C44F /* Build configuration list for PBXNativeTarget "WZSchedulerTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +550,7 @@
 				FB0F64481FEA77F50073C44F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB0F64491FEA77F50073C44F /* Build configuration list for PBXNativeTarget "WZSchedulerUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +559,7 @@
 				FB0F644B1FEA77F50073C44F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
