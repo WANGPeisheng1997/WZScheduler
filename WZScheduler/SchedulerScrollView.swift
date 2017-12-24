@@ -14,7 +14,7 @@ class SchedulerScrollView:UIScrollView{
     var timeAxisLabel = [UILabel]()
     var missionViewArray = [MissionView]()
     let distance = 40
-    let baseTime = 0 * 3600
+    let baseTime = 6 * 3600
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -74,14 +74,23 @@ class SchedulerScrollView:UIScrollView{
     func loadMission(missionList: [Mission]){
         for mission in missionList {
             let newMissionView = MissionView(mission: mission)
-            newMissionView.setFrame(frame: CGRect(x: 70, y: distance*(mission.start_time-baseTime)/3600+20, width: 230, height: distance*(mission.end_time-mission.start_time)/3600))
-            missionViewArray.append(newMissionView)
-            self.addSubview(newMissionView)
-            let longPressRecognizer = UILongPressGestureRecognizer(target: self, action:#selector(longPress(_:)))
             
-            longPressRecognizer.minimumPressDuration = 1.0
-            newMissionView.isUserInteractionEnabled = true
-            newMissionView.addGestureRecognizer(longPressRecognizer)
+            
+            if(mission.type=="REPEAT"){
+                newMissionView.setFrame(frame: CGRect(x: 70, y: distance*(mission.start_time-baseTime)/3600+20, width: 230, height: distance*(mission.end_time-mission.start_time)/3600))
+            }
+            else if(mission.type=="LOCATED" && mission.any_time==false){
+                newMissionView.setFrame(frame: CGRect(x: 70, y: distance*(mission.actual_start_time-baseTime)/3600+20, width: 230, height: distance*(mission.end_time-mission.start_time)/3600))
+            }
+            if(mission.type=="REPEAT" || (mission.type=="LOCATED" && mission.any_time==false)){
+                missionViewArray.append(newMissionView)
+                self.addSubview(newMissionView)
+                let longPressRecognizer = UILongPressGestureRecognizer(target: self, action:#selector(longPress(_:)))
+                
+                longPressRecognizer.minimumPressDuration = 1.0
+                newMissionView.isUserInteractionEnabled = true
+                newMissionView.addGestureRecognizer(longPressRecognizer)
+            }
         }
     }
     
@@ -104,7 +113,7 @@ class SchedulerScrollView:UIScrollView{
     func initializeTimeAxisLabel(baseTime:Int){
         for i in 0...23{
             let newLabel = UILabel()
-            newLabel.text = String((i+baseTime)%24) + ":00"
+            newLabel.text = String((i+baseTime/3600)%24) + ":00"
             newLabel.frame = calculateTimeAxisLabelPosition(Tag: i)
             //newLabel.textAlignment = NSTextAlignment.center
             self.addSubview(newLabel)

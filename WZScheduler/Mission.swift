@@ -47,7 +47,7 @@ class MissionView:UIView {
 
 class Mission {
     
-    var db_id = "1"
+    var db_id = 1
     var work_id = 1
     var name = "睡觉"
     var parent_id = 1
@@ -61,10 +61,13 @@ class Mission {
     var deadline = 0
     var check_time = [0]
     
+    var actual_start_time = 0
+    var actual_end_time = 0
+    
     //let jsonArr = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String: Any]]
    
-    func load(dict: Dictionary<String, Any>){
-        db_id = dict["db_id"] as! String
+    func load(dict: [String:Any]){
+        db_id = dict["db_id"] as! Int
         work_id = dict["work_id"] as! Int
         name = dict["name"] as! String
         parent_id = dict["parent_id"] as! Int
@@ -77,6 +80,33 @@ class Mission {
         duration = dict["duration"] as! Int
         deadline = dict["deadline"] as! Int
         check_time = dict["check_time"] as! [Int]
+        
+        let acutualDate = Date.init(timeIntervalSince1970: TimeInterval(start_time))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        let stringDate = dateFormatter.string(from: acutualDate)
+        let diff = dateFormatter.date(from: stringDate)
+        actual_start_time = start_time - Int((diff?.timeIntervalSince1970)!)
+        
         //print(work_id, "   ", name, "   ",db_id)
+    }
+    
+    func isToday(today:Date)->Bool{
+        if(type=="REPEAT" && repeat_by=="DAY"){return true}
+        else if(type=="REPEAT" && repeat_by=="WEEK"){
+            let interval = Int(today.timeIntervalSince1970)
+            let days = Int(interval/86400)
+            let weekday = ((days+4)%7+7)%7
+            for i in repeat_days {
+                if(weekday == i){return true}
+            }
+            return false
+        }
+        else if(type=="LOCATED"){
+            let interval = Int(today.timeIntervalSince1970)
+            if(start_time>=interval && start_time<interval+86400){return true}
+            else{return false}
+        }
+        return false
     }
 }

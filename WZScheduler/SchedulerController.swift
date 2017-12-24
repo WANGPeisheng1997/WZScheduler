@@ -22,11 +22,11 @@ class SchedulerController: UIViewController, UIScrollViewDelegate {
     var previousView = SchedulerScrollView()
     var nextView = SchedulerScrollView()
     
+    var previousMissionList = [Mission]()
     var todayMissionList = [Mission]()
+    var nextMissionList = [Mission]()
     
     var horizontalPagedView = UIScrollView()
-    
-    var temp=0
     
     func nextDate()->Date{
         return Calendar.current.date(byAdding: Calendar.Component.day, value: 1, to: currentDate)!
@@ -38,24 +38,71 @@ class SchedulerController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        //self.view.backgroundColor = UIColor.clear
+        //self.view.frame = CGRect(x: 0, y: 0, width: 375, height: 667)
         
-        let strHtml = try! NSString(contentsOf: NSURL(string: "http://115.159.59.44:5000/testdata")! as URL, encoding: String.Encoding.utf8.rawValue)
-        print(strHtml)
-        let data = strHtml.data(using: String.Encoding.utf8.rawValue)
+        download()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    func download(){
+        let url = URL(string: "http://115.159.59.44:5000/update")!
+        var request = URLRequest(url: url)
+        let params:NSMutableDictionary = NSMutableDictionary()
+        params["kind"] = "update"
+        //params["username"] = account.username
+        params["username"] = "WPS"
+        //params["db_id"] = account.db_id
+        params["db_id"] = 105601592
+        params["update_time"] = 0
+        params["data"] = "{}"
         
-        let jsonArr = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String: Any]]
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        for json in jsonArr {
-            temp = temp+1
-            if(temp==1 || temp==4 || temp==9){
-            let newMission = Mission()
-            newMission.load(dict: json)
-            todayMissionList.append(newMission)
+        var jsonData:NSData? = nil
+        do {
+            jsonData  = try JSONSerialization.data(withJSONObject: params, options:JSONSerialization.WritingOptions.prettyPrinted) as NSData?
+        } catch {
+            
+        }
+        request.httpBody = jsonData as Data?
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let _ = response, let data = data {
+                //print(response)
+                let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                /*
+                 do {
+                 json = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.init(rawValue:0))
+                 } catch {
+                 
+                 }
+                 */
+                let dictionary = json as? [String: Any]
+                let dictdata = dictionary?["data"] as? [[String:Any]]
+                
+                account.data = dictionary?["data"] as? [[String:Any]]
+                print(account.data)
+                
+                self.initialize()
+                
+            } else {
+                print(error!)
             }
         }
         
-        dateFormatter.dateFormat = "yyyy/MM/dd"
+        task.resume()
+    }
     
+    func initialize(){
+        
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        
         dateLabel.text = dateFormatter.string(from: currentDate)
         dateLabel.frame = CGRect(x: 16,y: 28,width: viewWidth,height: 20)
         dateLabel.textAlignment = NSTextAlignment.center
@@ -63,7 +110,7 @@ class SchedulerController: UIViewController, UIScrollViewDelegate {
         
         horizontalPagedView.frame = CGRect(x: 16,y: 48,width: viewWidth,height: viewHeight)
         horizontalPagedView.contentSize = CGSize(width: viewWidth * 3,
-                                        height: viewHeight)
+                                                 height: viewHeight)
         horizontalPagedView.isPagingEnabled = true
         horizontalPagedView.showsHorizontalScrollIndicator = false
         horizontalPagedView.showsVerticalScrollIndicator = false
@@ -80,7 +127,7 @@ class SchedulerController: UIViewController, UIScrollViewDelegate {
         horizontalPagedView.delegate = self
         self.view.addSubview(horizontalPagedView)
         
-        mainView.loadMission(missionList: todayMissionList)
+        refreshMissionList()
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -95,11 +142,38 @@ class SchedulerController: UIViewController, UIScrollViewDelegate {
         dateLabel.text = dateFormatter.string(from: currentDate)
         
         horizontalPagedView.contentOffset.x = CGFloat(viewWidth)
+        refreshMissionList()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func refreshMissionList(){
+        previousView.clearMission()
+        mainView.clearMission()
+        nextView.clearMission()
+        previousMissionList = []
+        todayMissionList = []
+        nextMissionList = []
+        
+        for json in account.data! {
+            let newMission = Mission()
+            newMission.load(dict: json)
+            if(newMission.isToday(today: oneDayBeginningTime(date: previousDate()))){
+                self.previousMissionList.append(newMission)
+            }
+            if(newMission.isToday(today: oneDayBeginningTime(date: currentDate))){
+                self.todayMissionList.append(newMission)
+            }
+            if(newMission.isToday(today: oneDayBeginningTime(date: nextDate()))){
+                self.nextMissionList.append(newMission)
+            }
+        }
+        previousView.loadMission(missionList: previousMissionList)
+        mainView.loadMission(missionList: todayMissionList)
+        nextView.loadMission(missionList: nextMissionList)
     }
-
+    
+    func oneDayBeginningTime(date: Date)->Date{
+        let todayBeginningTime = dateFormatter.string(from: date)
+        let todayBeginning = dateFormatter.date(from: todayBeginningTime)!
+        return todayBeginning
+    }
 }
